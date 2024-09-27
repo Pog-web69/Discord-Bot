@@ -49,8 +49,7 @@ export default {
     async execute(interaction){
         await interaction.deferReply();
 
-        const cheatModeOn = await settings.get(`guild-${interaction.guildId}.cheatmode`);
-        if (cheatModeOn) return await interaction.editReply(await __("errors.cheat_mode_enabled")(interaction.guildId));
+        
 
         const guildkey = `guild-${interaction.guildId}`;
         const users = await db.get(guildkey);

@@ -52,7 +52,7 @@ export default {
 
         const embed = {
             title: "Bot Info",
-            description: (await __("replies.bot_info_tagline")(interaction.guildId)) + "\n[» Bot Invite «](https://discordapp.com/oauth2/authorize?client_id=1108279646165942363&scope=bot&permissions=1100048526544)",
+            description: (await __("replies.bot_info_tagline")(interaction.guildId)) + "\n[» Bot Invite «](https://discord.com/oauth2/authorize?client_id=1269398866491605032&permissions=2684644432&integration_type=0&scope=bot+applications.commands)",
             color: 2518621,
             thumbnail: {
                 url: botAvatar,
@@ -60,12 +60,12 @@ export default {
             fields: [
                 {
                     name: "Author :computer:",
-                    value: "`nullping` / [NullDev](https://github.com/NullDev)",
+                    value: "`nullping`",
                     inline: true,
                 },
                 {
                     name: "Source Code :scroll:",
-                    value: "[NullDev/Arithmetica-Bot](https://github.com/NullDev/Arithmetica-Bot)",
+                    value: "[NullDev/Arithmetica-Bot](https://Discords.com)",
                     inline: true,
                 },
                 { name: "\u200b", value: "\u200b", inline: true },

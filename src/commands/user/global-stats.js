@@ -44,29 +44,27 @@ export default {
         const type = interaction.options.get("type")?.value || "current";
 
         const allCounts = await guild.all();
-        const counts = allCounts.map(e => ({ best: e.value.best || 0, count: e.value.count || 0, guildId: e.id.replace("guild-", ""), cheat: !!e.value.cheatmode }))
-            .filter(e => !e.cheat);
+        const counts = allCounts.map(e => ({ best: e.value.best || 0, count: e.value.count || 0, guildId: e.id.replace("guild-", ""), cheat: !!e.value.cheatmode }));
 
         if (type === "best") counts.sort((a, b) => b.best - a.best);
         else counts.sort((a, b) => b.count - a.count);
 
+        const topCounts = counts.slice(0, 10); // Get top 10 entries
+        const leaderboard = await Promise.all(topCounts.map(async (e, i) => {
+            const guildName = (await interaction.client.guilds.fetch(e.guildId)).name;
+            return `${i + 1}. ${guildName} - ${type === "best" ? e.best : e.count}`;
+        })).then(results => results.join("\n"));
+
+        const currentGuildName = (await interaction.client.guilds.fetch(interaction.guildId)).name;
         const rank = (counts.findIndex(e => e.guildId === interaction.guildId) || 0) + 1;
         const currentCountOfGuild = counts.find(e => e.guildId === interaction.guildId)?.count || 0;
         const bestCountOfGuild = counts.find(e => e.guildId === interaction.guildId)?.best || 0;
-        const currentGuildName = (await interaction.client.guilds.fetch()).find(e => e.id === interaction.guildId)?.name;
         const allGuilds = await interaction.client.guilds.fetch().then(guilds => guilds.size);
-
-        let reply = await __(`replies.global_top_${type}`, currentGuildName, rank, allGuilds, type === "best" ? bestCountOfGuild : currentCountOfGuild)(interaction.guildId);
-        if (rank === 1) reply += " 👑";
-
-        const txt = (rank === 0 || !currentGuildName)
-            ? await __("errors.no_top_stats")(interaction.guildId)
-            : reply;
 
         const embed = {
             color: defaults.embed_color,
             title: ":bar_chart:┃Global Stats",
-            description: ":heavy_minus_sign::heavy_minus_sign::heavy_minus_sign: \n" + txt + "\n:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:",
+            description: `**Leaderboard**\n${leaderboard}\n\n**Your Server**\n${currentGuildName} - Rank: ${rank}, ${type === "best" ? "Best Count" : "Current Count"}: ${type === "best" ? bestCountOfGuild : currentCountOfGuild}`,
             footer: {
                 text: `Requested by ${interaction.user.displayName ?? interaction.user.tag}`,
                 icon_url: interaction.user.displayAvatarURL(),
