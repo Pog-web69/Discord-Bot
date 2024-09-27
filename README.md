@@ -1,13 +1,13 @@
-# Arithmetica-Bot
-[![NullDev/DiscordJS-Template](https://img.shields.io/badge/Template%3A-NullDev%2FDiscordJS--Template-green?style=flat-square&logo=github)](https://github.com/NullDev/DiscordJS-Template) [![cd](https://github.com/NullDev/Arithmetica-Bot/actions/workflows/cd.yml/badge.svg)](https://github.com/NullDev/Arithmetica-Bot/actions/workflows/cd.yml) [![ESLint](https://github.com/NullDev/Arithmetica-Bot/actions/workflows/eslint.yml/badge.svg)](https://github.com/NullDev/Arithmetica-Bot/actions/workflows/eslint.yml) [![License](https://img.shields.io/github/license/NullDev/Arithmetica-Bot?label=License&logo=Creative%20Commons)](https://github.com/NullDev/Arithmetica-Bot/blob/master/LICENSE) [![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/NullDev/Arithmetica-Bot?logo=Cachet)](https://github.com/NullDev/Arithmetica-Bot/issues?q=is%3Aissue+is%3Aclosed)
+# Counting-Bot
+Fork of https://github.com/NullDev/Arithmetica-Bot
 
-<p align="center"><img height="250" width="auto" src="https://arithmetica.xyz/img/img.png" /></p>
+<p align="center"><img height="250" width="auto" src="https://cdn.discordapp.com/app-icons/1269398866491605032/fcdbdacfc4f220b6d69d869bf144b69a.png" /></p>
 <p align="center"><b>Discord Bot for counting. Allows arithmetic expressions.<br>https://arithmetica.xyz/</b></p>
 <hr>
 
 ## :question: What does it do?
 
-Your average counting bot. Except you can count with arithmetic expressions!
+Your average counting bot. Except you can count!
 
 Wiki: https://arithmetica.xyz/wiki
 
@@ -15,7 +15,7 @@ Wiki: https://arithmetica.xyz/wiki
 
 ## :satellite: Invite the bot
 
-[![Invite](https://img.shields.io/badge/Invite-37a779?style=for-the-badge)](https://discordapp.com/oauth2/authorize?client_id=1108279646165942363&scope=bot&permissions=1100048526544)
+[![Invite](https://img.shields.io/badge/Invite-37a779?style=for-the-badge)](https://discord.com/oauth2/authorize?client_id=1269398866491605032&permissions=1100048592080&integration_type=0&scope=bot+applications.commands)
 
 <sub>The link above will invite a bot hosted by me that uses the latest version of this repo. <br>
 Alternatively you can host the bot yourself. Instructions [below ⏬](#wrench-setup) </sub>
@@ -73,11 +73,6 @@ Alternatively you can host the bot yourself. Instructions [below ⏬](#wrench-se
 
 <hr>
 
-## :diamond_shape_with_a_dot_inside: Feature requests & Issues
-
-Feature request or discovered a bug? Please [open an Issue](https://github.com/NullDev/Arithmetica-Bot/issues/new/choose) here on GitHub.
-
-<hr>
 
 ## :lock: Permissions
 
@@ -95,22 +90,10 @@ The bot requires the following permissions:
 
 <hr>
 
-## 🤖 DBL & Top.gg
-
-<p align="center">
-<a href="https://discordbotlist.com/bots/arithmetica"><img src="https://discordbotlist.com/api/v1/bots/1108279646165942363/widget"></a>&nbsp;&nbsp;
-<a href="https://top.gg/bot/1108279646165942363"><img src="https://top.gg/api/widget/1108279646165942363.svg"></a>
-</p>
-
-<hr>
-
 ## 🌐 Website & Repo
 
-Website: https://arithmetica.xyz <br>
-Repository: https://github.com/NullDev/arithmetica.xyz
-
-TOS: https://arithmetica.xyz/tos/ <br>
-Privacy: https://arithmetica.xyz/privacy/
+Original Website: https://arithmetica.xyz <br>
+Forked Repository: https://github.com/NullDev/arithmetica.xyz
 
 <hr>
 
@@ -146,15 +129,5 @@ Once the config has been copied like described in [Step 4](#wrench-setup), it ca
 | discord: <br> `top_token` | OPTIONAL: [Top.gg](https://top.gg/) token to push stats. | String | N/A |
 | discord: <br> `discords_list_token` | OPTIONAL: [Discords List](https://discords.com/) token to push stats. | String | N/A |
 | discord: <br> `vote_webhook_secret` | OPTIONAL: Secret for the vote webhook. | String | N/A |
-
-<hr>
-
-## :octocat: Contributors
-
-<a href="https://github.com/NullDev/Arithmetica-Bot/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=NullDev/Arithmetica-Bot&v=1" />
-</a>
-
-<sub>Made with [contrib.rocks](https://contrib.rocks).</sub>
 
 <hr>
