@@ -26,12 +26,7 @@ export default {
             option.setName("enabled")
                 .setDescription(translations.cheat_mode.options.enabled.desc)
                 .setDescriptionLocalizations(translations.cheat_mode.options.enabled.translations)
-                .setRequired(true))
-        .addIntegerOption((option) =>
-            option.setName("startcount")
-                .setDescription(translations.cheat_mode.options.startcount.desc)
-                .setDescriptionLocalizations(translations.cheat_mode.options.startcount.translations)
-                .setRequired(false)),
+                .setRequired(true)),
 
     /**
      * @param {import("discord.js").CommandInteraction} interaction
@@ -56,10 +51,10 @@ export default {
             showNoFirst: true,
         }).then(async(answer) => {
             if (answer === "yes"){
-                const cnt = interaction.options.get("startcount")?.value || 0;
+                const cnt = 0;  // Default startcount to 0
 
                 await guildDb.set(`guild-${interaction.guildId}.cheatmode`, true);
-                await guildDb.set(`guild-${interaction.guildId}.count`, cnt);
+                await guildDb.set(`guild-${interaction.guildId}.count`, cnt);  // Set count to 0 by default
                 await guildDb.delete(`guild-${interaction.guildId}.lastUser`);
 
                 await interaction.followUp({
